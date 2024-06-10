@@ -16,7 +16,7 @@ class Ball {
         ball.className = 'ball';
         ball.style.width = `${this.radius * 2}px`;
         ball.style.height = `${this.radius * 2}px`;
-        // ball.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`; // Random color
+        ball.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`; // Random color
         container.appendChild(ball);
         return ball;
     }
@@ -67,12 +67,13 @@ class Ball {
 }
 
 let balls = [];
-for (let i = 0; i < 10; i++) {
-    let radius = 20;
+for (let i = 0; i < 15; i++) {
+    // let radius = 20;
+    let radius = Math.random() * (20 - 5) + 10;
     let x = Math.random() * (container.clientWidth - radius * 2) + radius;
     let y = Math.random() * (container.clientHeight - radius * 2) + radius;
-    let dx = (Math.random() - 0.5) * 4;
-    let dy = (Math.random() - 0.5) * 4;
+    let dx = (Math.random() - 0.5) * 10;
+    let dy = (Math.random() - 0.5) * 10;
     balls.push(new Ball(x, y, radius, dx, dy));
 }
 
